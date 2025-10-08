@@ -10,23 +10,14 @@
 
 # Lab 2: Time-Sharing Implementation
 ### Part 1: Simple Time-Sharing (25 นาที)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6155dede-e19c-49e3-a912-14e4b0252b78" />
+
 ### Part 2: Time-Sharing with Variable Workloads (15 นาที)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0dcc008e-4522-44f7-9d84-c6a8e7ab685c" />
+
 ### Part 3: การวิเคราะห์ปัญหา (5 นาที)
-## การทดสอบและวัดผล
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/209166ed-7490-4a72-bf3d-dfaecc1cb30f" />
 
-### 1. การวัด CPU Utilization
-- สังเกตการแสดงสถิติทุก 20 context switches
-- บันทึกค่า CPU utilization และ overhead
-
-### 2. การทดสอบ Time Slice ต่างๆ
-- ทดสอบ time slice: 10ms, 25ms, 50ms, 100ms, 200ms
-- เปรียบเทียบประสิทธิภาพ
-
-### 3. การสังเกต LED Pattern
-- LED1: Sensor task (งานเบา)
-- LED2: Processing task (งานหนัก)
-- LED3: Actuator task (งานปานกลาง)
-- LED4: Display task (งานเบา)
 
 ## คำถามสำหรับวิเคราะห์
 
@@ -44,10 +35,21 @@
 | 50ms       | 20                  | 85-90%          | 10-15%   |
 | 100ms      | 10                  | 90-95%          | 5-10%    |
 
-## บทสรุร
+--------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
-การทดลองนี้แสดงให้เห็นถึง:
-1. **Context Switching Overhead** - เวลาที่สููญเสียในการเปลี่ยน task
-2. **Time Slice Trade-offs** - ความสมดุลระหว่างการตอบสนองและประสิทธิภาพ
-3. **Fixed Schedule Limitations** - ข้อจำกัดของการใช้เวลาคงที่
-4. **Need for RTOS** - เหตุผลที่จำเป็นต้องมี Real-Time Operating System
+# Lab 3: Cooperative vs Preemptive Comparison
+### Part 1: Cooperative Multitasking (15 นาที)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/35bcb92b-e5e9-4640-b002-298f184ba512" />
+
+### Part 2: Preemptive Multitasking (15 นาที)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/545f9bf1-9bd2-4806-8719-4bfd5298d962" />
+
+
+## คำถามสำหรับวิเคราะห์
+
+1. ระบบไหนมีเวลาตอบสนองดีกว่า? เพราะอะไร?
+2. ข้อดีของ Cooperative Multitasking คืออะไร?
+3. ข้อเสียของ Cooperative Multitasking คืออะไร?
+4. ในสถานการณ์ใดที่ Cooperative จะดีกว่า Preemptive?
+5. เหตุใด Preemptive จึงเหมาะสำหรับ Real-time systems?
