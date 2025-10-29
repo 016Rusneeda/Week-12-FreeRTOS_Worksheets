@@ -64,8 +64,8 @@
 ## คำถามทบทวน
 
 1. ความแตกต่างระหว่าง `printf()` และ `ESP_LOGI()` คืออะไร?
-   * ตอบ
-   | รายการ                  | `printf()`                              | `ESP_LOGI()`                                          |
+  
+|   รายการ                  | `printf()`                              | `ESP_LOGI()`                                          |
 | ----------------------- | --------------------------------------- | ----------------------------------------------------- |
 | **หน้าที่**             | แสดงข้อความออกทาง serial console โดยตรง | เป็นระบบ logging ของ ESP-IDF สำหรับแสดงข้อมูล debug   |
 | **การจัดการ Log level** | ไม่มีระดับความสำคัญ (แสดงทุกข้อความ)    | มีระดับ (Verbose, Debug, Info, Warn, Error)           |
@@ -101,11 +101,43 @@
 
 ## แบบฝึกหัด
 ### Exercise 1: Task Self-Deletion
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9a6ba627-3125-4607-a5a1-08c3b15975d7" />
+
 ### Exercise 2: Task Communication (Preview)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f37e4def-65b1-41be-8a23-6c663b8d84b0" />
+
 ## คำถามทบทวน
 
 1. เหตุใด Task function ต้องมี infinite loop?
+   * ตอบ เพราะ Task ใน FreeRTOS จะถูก scheduler เรียกใช้งานซ้ำๆ ตลอดเวลา
+      ถ้าไม่มี loop (เช่น while(1)) → Task จะทำงานจบเพียงครั้งเดียว แล้ว สิ้นสุด (ถูกลบออกจากระบบ)
+     การใช้ infinite loop ทำให้ Task สามารถ ทำงานต่อเนื่อง, รอเหตุการณ์, หรือ หน่วงเวลา ได้ตามต้องการ
+Task ต้องมี infinite loop เพื่อให้ยังคงอยู่ในระบบและรอให้ scheduler สลับกลับมาทำงานอีก
+
 2. ความหมายของ stack size ใน xTaskCreate() คืออะไร?
+   * ตอบ stack size คือ จำนวนหน่วยความจำ (words) ที่จัดสรรให้กับ stack ของ Task
+    Stack ใช้เก็บ ตัวแปรภายในฟังก์ชัน, return address, และ context ของ CPU เมื่อมีการสลับ Task
+     ขนาดที่กำหนดจะคูณด้วย ขนาดของ word (4 bytes บน ESP32)
+     
 3. ความแตกต่างระหว่าง vTaskDelay() และ vTaskDelayUntil()?
+   * ตอบ
+    
+| รายการ               | `vTaskDelay()`                             | `vTaskDelayUntil()` |
+| ----------------------- | --------------------------------------- | ----------------------------------------------------- |
+| **หลักการหน่วงเวลา** | หน่วงตามเวลาที่ระบุ *นับจากตอนที่เรียกใช้* | หน่วงให้ตรงกับ **จุดเวลาที่แน่นอนในรอบถัดไป**           |
+| **เหมาะสำหรับ**      | หน่วงเวลาแบบไม่ต้องการความแม่นยำ           | Task ที่ต้องการคาบเวลาคงที่ (periodic task)        |
+
+สรุป:
+`vTaskDelay()` → หน่วงแบบ “เท่ากับเวลาที่รอ”
+`vTaskDelayUntil()` → หน่วงแบบ “ให้ตรงรอบเวลา” (ป้องกัน drift)
+
 4. การใช้ vTaskDelete(NULL) vs vTaskDelete(handle) ต่างกันอย่างไร?
+   * ตอบ
+
+| คำสั่ง                | ผลลัพธ์                                                      |
+| --------------------- | ------------------------------------------------------------ |
+| `vTaskDelete(NULL)`   | ลบ **ตัวเอง (current task)** ออกจากระบบ                      |
+| `vTaskDelete(handle)` | ลบ Task อื่นที่ระบุด้วย handle (เช่นที่ได้จาก `xTaskCreate`) |
+
 5. Priority 0 กับ Priority 24 อันไหนสูงกว่า?
+    * ตอบ Priority 24 สูงกว่า Priority 0
