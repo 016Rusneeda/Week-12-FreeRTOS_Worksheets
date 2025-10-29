@@ -89,8 +89,15 @@
 
 # Lab 3: สร้าง Task แรกด้วย FreeRTOS
 ### ผลลัพธ์ Step 1: Task พื้นฐาน (15 นาที)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/046ba504-031b-403d-8828-1dd075dce8aa" />
+
 ### ผลลัพธ์ Step 2: Task Management (15 นาที)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3704980c-1664-4c9a-aaf9-777ede0abe25" />
+
+
 ### ผลลัพธ์ Step 3: Task Priorities และ Statistics (15 นาที)
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/773f41f6-c80b-47b5-9b16-4643bee15c5b" />
+
 
 ## แบบฝึกหัด
 ### Exercise 1: Task Self-Deletion
