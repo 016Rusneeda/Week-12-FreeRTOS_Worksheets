@@ -1,0 +1,26 @@
+# สร้างไฟล์ .gitignore 
+cat > .gitignore << 'EOF'
+# ESP-IDF Build files
+build/
+sdkconfig
+sdkconfig.old
+sdkconfig.h
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+managed_components/
+dependencies.lock
+
+# Logs
+*.log
+EOF
