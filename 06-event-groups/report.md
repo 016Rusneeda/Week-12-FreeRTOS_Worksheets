@@ -1,20 +1,14 @@
 # Lab 1: Basic Event Groups
-## 🧪 การทดลอง
-### ทดลองที่ 1: System Initialization Sequence
-### ทดลองที่ 2: Event Conditions Testing
-### ทดลองที่ 3: System Resilience
-### ทดลองที่ 4: Timing Analysis
+## 🧪 ผลการทดลอง
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1dce21a-06e2-41e4-825b-f03c15a33256" />
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Lab 2: Event Synchronization
-## 🧪 การทดลอง
-### ทดลองที่ 1: Barrier Synchronization
-### ทดลองที่ 2: Pipeline Processing
-### ทดลองที่ 3: Workflow Management
-### ทดลองที่ 4: System Performance
+## 🧪 ผลการทดลอง
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bd809239-5267-4810-8ac5-2f08bbf510dc" />
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Lab 3: Complex Event Patterns
-## 🧪 การทดลอง
-### ทดลองที่ 1: Pattern Recognition
-### ทดลองที่ 2: State Machine Behavior
-### ทดลองที่ 3: Adaptive Learning
-### ทดลองที่ 4: Real-world Scenarios
+## 🧪 ผลการทดลอง
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a057e727-045a-421e-b7e1-8ea32cd7f379" />
+
